@@ -23,6 +23,7 @@ endif
 " Formato: hi <Grupo> guifg=<hex> guibg=<hex> gui=<estilo> ctermfg=<0-255> ctermbg=<0-255> cterm=<estilo>
 hi Normal         guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
 hi Cursor         guifg=#226622 guibg=#55ff55 ctermfg=28  ctermbg=82
+hi CursorLine     guifg=NONE    guibg=#113311 gui=none    ctermfg=NONE ctermbg=22 cterm=none
 hi lCursor        guifg=#226622 guibg=#55ff55 ctermfg=28  ctermbg=82
 hi CursorIM       guifg=#226622 guibg=#55ff55 ctermfg=28  ctermbg=82
 hi Directory      guifg=#55ff55 guibg=#000000 ctermfg=82  ctermbg=0
@@ -38,7 +39,7 @@ hi IncSearch      guifg=#226622 guibg=#55ff55 gui=none ctermfg=28  ctermbg=82 ct
 hi LineNr         guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
 hi ModeMsg        guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
 hi MoreMsg        guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
-hi NonText        guifg=#44cc44 guibg=#113311 ctermfg=71  ctermbg=22
+hi NonText        guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=22
 hi Question       guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
 hi Search         guifg=#113311 guibg=#44cc44 gui=none ctermfg=22  ctermbg=71 cterm=none
 hi SpecialKey     guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
@@ -49,10 +50,14 @@ hi Visual         guifg=#55ff55 guibg=#339933 gui=none ctermfg=82  ctermbg=34 ct
 hi VisualNOS      guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
 hi WarningMsg     guifg=#55ff55 guibg=#000000 ctermfg=82  ctermbg=0
 hi WildMenu       guifg=#226622 guibg=#55ff55 ctermfg=28  ctermbg=82
+" Para la columna de signos
+hi SignColumn     guifg=#44cc44 guibg=#061306 ctermfg=71 ctermbg=28
+" Ejemplo para destacar Strings
+hi String         guifg=#55ff55 guibg=NONE    ctermfg=82 ctermbg=NONE
 
 " Elementos de resaltado de sintaxis
 hi Comment        guifg=#226622 guibg=NONE   ctermfg=28  ctermbg=NONE
-hi Constant       guifg=#55ff55 guibg=#226622 ctermfg=82  ctermbg=28
+hi Constant       guifg=#55ff55 guibg=NONE ctermfg=82  ctermbg=28
 hi Special        guifg=#44cc44 guibg=#226622 ctermfg=71  ctermbg=28
 hi Identifier     guifg=#55ff55 guibg=NONE   ctermfg=82  ctermbg=NONE
 hi Statement      guifg=#55ff55 guibg=NONE   gui=bold ctermfg=82  ctermbg=NONE cterm=bold
