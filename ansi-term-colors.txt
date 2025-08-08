@@ -1,8 +1,8 @@
-Black    rgb(59,59,59)     #3b3b3b
-Red      rgb(207,106,76)   #cf6a4c
-Green    rgb(153,173,106)  #99ad6a
-Yellow   rgb(216,173,76)   #d8ad4c
-Blue     rgb(89,123,197)   #597bc5
-Magenta  rgb(160,55,176)   #a037b0
-Cyan     rgb(113,185,248)  #71b9f8
-White    rgb(173,173,173)  #adadad
+Black    rgb(0,0,0)        #000000
+Red      rgb(17,51,17)     #113311
+Green    rgb(34,102,34)    #226622
+Yellow   rgb(51,153,51)    #339933
+Blue     rgb(68,204,68)    #44cc44
+Magenta  rgb(85,255,85)    #55ff55
+Cyan     rgb(68,204,68)    #44cc44
+White    rgb(85,255,85)    #55ff55
