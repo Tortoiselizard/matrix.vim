@@ -1,10 +1,12 @@
 " vim:set ts=8 sts=2 sw=2 tw=0:
 "
-" matrix.vim - MATRIX like colorscheme (Terminal RGB optimized)
+" matrix.vim - MATRIX like colorscheme. 👾
 "
-" Maintainer: MURAOKA Taro <koron@tka.att.ne.jp>
-" Modificado para soporte terminal: 2025-08-09
+" Maintainer:   MURAOKA Taro <koron@tka.att.ne.jp>
+" Last Change:  10-Jun-2003.
+" Adaptado para terminales modernos (RGB).
 
+" Configuración básica del tema
 set background=dark
 hi clear
 if exists("syntax_on")
@@ -12,52 +14,50 @@ if exists("syntax_on")
 endif
 let g:colors_name = 'matrix'
 
-" Habilitar soporte RGB en terminal
-set termguicolors
+" Si la terminal soporta colores RGB, los activamos.
+if &t_Co > 255 || has("termguicolors")
+  set termguicolors
+endif
 
-" Mapeo de grupos para GUI y terminal RGB
-hi Cursor      guifg=#000000 ctermfg=16   guibg=#55ff55 ctermbg=46  gui=none
-hi lCursor     guifg=#000000 ctermfg=16   guibg=#55ff55 ctermbg=46  gui=none
-hi CursorIM    guifg=#000000 ctermfg=16   guibg=#55ff55 ctermbg=46  gui=none
-hi Directory   guifg=#55ff55 ctermfg=46   guibg=#000000 ctermbg=16  gui=none
-hi DiffAdd     guifg=#55ff55 ctermfg=46   guibg=#226622 ctermbg=22  gui=none
-hi DiffChange  guifg=#55ff55 ctermfg=46   guibg=#226622 ctermbg=22  gui=none
-hi DiffDelete  guifg=#113311 ctermfg=233  guibg=#113311 ctermbg=233 gui=none
-hi DiffText    guifg=#000000 ctermfg=16   guibg=#55ff55 ctermbg=46  gui=bold cterm=bold
-hi ErrorMsg    guifg=#000000 ctermfg=16   guibg=#ff5555 ctermbg=203 gui=bold cterm=bold
-hi VertSplit   guifg=#339933 ctermfg=29   guibg=#000000 ctermbg=16  gui=none
-hi Folded      guifg=#44cc44 ctermfg=41   guibg=#113311 ctermbg=233 gui=italic cterm=italic
-hi FoldColumn  guifg=#44cc44 ctermfg=41   guibg=#226622 ctermbg=22  gui=none
-hi IncSearch   guifg=#000000 ctermfg=16   guibg=#55ff55 ctermbg=46  gui=bold cterm=bold
-hi LineNr      guifg=#339933 ctermfg=29   guibg=#000000 ctermbg=16  gui=none
-hi ModeMsg     guifg=#55ff55 ctermfg=46   guibg=#000000 ctermbg=16  gui=bold cterm=bold
-hi MoreMsg     guifg=#44cc44 ctermfg=41   guibg=#000000 ctermbg=16  gui=none
-hi NonText     guifg=#226622 ctermfg=22   guibg=#000000 ctermbg=16  gui=none
-hi Normal      guifg=#44cc44 ctermfg=41   guibg=#000000 ctermbg=16  gui=none
-hi Question    guifg=#55ff55 ctermfg=46   guibg=#000000 ctermbg=16  gui=bold cterm=bold
-hi Search      guifg=#000000 ctermfg=16   guibg=#44cc44 ctermbg=41  gui=bold cterm=bold
-hi SpecialKey  guifg=#339933 ctermfg=29   guibg=#000000 ctermbg=16  gui=none
-hi StatusLine  guifg=#000000 ctermfg=16   guibg=#55ff55 ctermbg=46  gui=bold cterm=bold
-hi StatusLineNC guifg=#226622 ctermfg=22  guibg=#000000 ctermbg=16  gui=none
-hi Title       guifg=#55ff55 ctermfg=46   guibg=#000000 ctermbg=16  gui=bold cterm=bold
-hi Visual      guifg=#000000 ctermfg=16   guibg=#44cc44 ctermbg=41  gui=none
-hi VisualNOS   guifg=#339933 ctermfg=29   guibg=#000000 ctermbg=16  gui=underline cterm=underline
-hi WarningMsg  guifg=#ff5555 ctermfg=203  guibg=#000000 ctermbg=16  gui=bold cterm=bold
-hi WildMenu    guifg=#000000 ctermfg=16   guibg=#55ff55 ctermbg=46  gui=bold cterm=bold
+" Sintaxis y elementos de la UI de Vim
+" Formato: hi <Grupo> guifg=<hex> guibg=<hex> gui=<estilo> ctermfg=<0-255> ctermbg=<0-255> cterm=<estilo>
+hi Normal         guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
+hi Cursor         guifg=#226622 guibg=#55ff55 ctermfg=28  ctermbg=82
+hi lCursor        guifg=#226622 guibg=#55ff55 ctermfg=28  ctermbg=82
+hi CursorIM       guifg=#226622 guibg=#55ff55 ctermfg=28  ctermbg=82
+hi Directory      guifg=#55ff55 guibg=#000000 ctermfg=82  ctermbg=0
+hi DiffAdd        guifg=#55ff55 guibg=#226622 gui=none ctermfg=82  ctermbg=28 cterm=none
+hi DiffChange     guifg=#55ff55 guibg=#226622 gui=none ctermfg=82  ctermbg=28 cterm=none
+hi DiffDelete     guifg=#113311 guibg=#113311 gui=none ctermfg=22  ctermbg=22 cterm=none
+hi DiffText       guifg=#55ff55 guibg=#339933 gui=bold ctermfg=82  ctermbg=34 cterm=bold
+hi ErrorMsg       guifg=#55ff55 guibg=#339933 ctermfg=82  ctermbg=34
+hi VertSplit      guifg=#339933 guibg=#339933 ctermfg=34  ctermbg=34
+hi Folded         guifg=#44cc44 guibg=#113311 ctermfg=71  ctermbg=22
+hi FoldColumn     guifg=#44cc44 guibg=#226622 ctermfg=71  ctermbg=28
+hi IncSearch      guifg=#226622 guibg=#55ff55 gui=none ctermfg=28  ctermbg=82 cterm=none
+hi LineNr         guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
+hi ModeMsg        guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
+hi MoreMsg        guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
+hi NonText        guifg=#44cc44 guibg=#113311 ctermfg=71  ctermbg=22
+hi Question       guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
+hi Search         guifg=#113311 guibg=#44cc44 gui=none ctermfg=22  ctermbg=71 cterm=none
+hi SpecialKey     guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
+hi StatusLine     guifg=#55ff55 guibg=#339933 gui=none ctermfg=82  ctermbg=34 cterm=none
+hi StatusLineNC   guifg=#113311 guibg=#339933 gui=none ctermfg=22  ctermbg=34 cterm=none
+hi Title          guifg=#55ff55 guibg=#113311 gui=bold ctermfg=82  ctermbg=22 cterm=bold
+hi Visual         guifg=#55ff55 guibg=#339933 gui=none ctermfg=82  ctermbg=34 cterm=none
+hi VisualNOS      guifg=#44cc44 guibg=#000000 ctermfg=71  ctermbg=0
+hi WarningMsg     guifg=#55ff55 guibg=#000000 ctermfg=82  ctermbg=0
+hi WildMenu       guifg=#226622 guibg=#55ff55 ctermfg=28  ctermbg=82
 
-" Elementos de sintaxis
-hi Comment    guifg=#339933 ctermfg=29   guibg=#000000 ctermbg=16  gui=italic cterm=italic
-hi Constant   guifg=#55ff55 ctermfg=46   guibg=#000000 ctermbg=16  gui=bold cterm=bold
-hi Special    guifg=#44cc44 ctermfg=41   guibg=#000000 ctermbg=16  gui=none
-hi Identifier guifg=#55ff55 ctermfg=46   guibg=#000000 ctermbg=16  gui=none
-hi Statement  guifg=#55ff55 ctermfg=46   guibg=#000000 ctermbg=16  gui=bold cterm=bold
-hi PreProc    guifg=#44cc44 ctermfg=41   guibg=#000000 ctermbg=16  gui=italic cterm=italic
-hi Type       guifg=#55ff55 ctermfg=46   guibg=#000000 ctermbg=16  gui=bold cterm=bold
-hi Underlined guifg=#44cc44 ctermfg=41   guibg=#000000 ctermbg=16  gui=underline cterm=underline
-hi Error      guifg=#000000 ctermfg=16   guibg=#ff5555 ctermbg=203 gui=bold cterm=bold
-hi Todo       guifg=#000000 ctermfg=16   guibg=#55ff55 ctermbg=46  gui=bold cterm=bold
-
-" Mejoras para legibilidad
-hi MatchParen guifg=#55ff55 ctermfg=46   guibg=#339933 ctermbg=29  gui=bold cterm=bold
-hi Pmenu      guifg=#44cc44 ctermfg=41   guibg=#113311 ctermbg=233 gui=none
-hi PmenuSel   guifg=#000000 ctermfg=16   guibg=#55ff55 ctermbg=46  gui=bold cterm=bold
+" Elementos de resaltado de sintaxis
+hi Comment        guifg=#226622 guibg=NONE   ctermfg=28  ctermbg=NONE
+hi Constant       guifg=#55ff55 guibg=#226622 ctermfg=82  ctermbg=28
+hi Special        guifg=#44cc44 guibg=#226622 ctermfg=71  ctermbg=28
+hi Identifier     guifg=#55ff55 guibg=NONE   ctermfg=82  ctermbg=NONE
+hi Statement      guifg=#55ff55 guibg=NONE   gui=bold ctermfg=82  ctermbg=NONE cterm=bold
+hi PreProc        guifg=#339933 guibg=NONE   ctermfg=34  ctermbg=NONE
+hi Type           guifg=#55ff55 guibg=NONE   gui=bold ctermfg=82  ctermbg=NONE cterm=bold
+hi Underlined     guifg=#55ff55 guibg=NONE   gui=underline ctermfg=82 ctermbg=NONE cterm=underline
+hi Error          guifg=#55ff55 guibg=#339933 ctermfg=82  ctermbg=34
+hi Todo           guifg=#113311 guibg=#44cc44 gui=none ctermfg=22  ctermbg=71 cterm=none
